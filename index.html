@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript - Ex - Homework -B2+3</title>
+
+    <!-- My css -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- My css -->
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- Bootstrap CSS -->
+  </head>
+
+  <body style="background-color: #eee">
+    <h1 style="font-size: 3rem; text-align: center">
+      Javascript - Ex - Homework - B4
+    </h1>
+
+    <div class="container py-3">
+      <div class="row">
+        <!-- Bài tập 1 -->
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-header">
+              Bài tập 5: Tính ngày tháng năm
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Nhập số ngày:</label>
+                <input id="dateInput" type="number" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label>Nhập số tháng:</label>
+                <input id="monthInput" type="number" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label>Nhập số năm:</label>
+                <input id="yearInput" type="number" class="form-control" />
+              </div>
+              <button class="btn btn-primary" onclick="dateMonthYearPrev()">
+                Ngày hôm qua
+              </button>
+              <button class="btn btn-primary" onclick="dateMonthYearNext()">
+                Ngày mai
+              </button>
+            </div>
+            <div id="showDateMonthYear" class="card-footer text-muted"></div>
+          </div>
+        </div>
+        <!-- Bài tập 1 -->
+        <!-- Bài tập 2 -->
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-header">
+              Bài tập 2: Tính ngày
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Nhập số tháng:</label>
+                <input id="monthInput2" type="number" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label>Nhập số năm:</label>
+                <input id="yearInput2" type="number" class="form-control" />
+              </div>
+              <button class="btn btn-primary" onclick="daysCal()">
+               Tính ngày
+              </button>
+            </div>
+            <div id="showDaysCount" class="card-footer text-muted"></div>
+          </div>
+        </div>
+        <!-- Bài tập 2 -->
+        <!-- Bài tập 3 -->
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-header">
+              Bài tập 3: Đọc số
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Nhập số 3 chữ số:</label>
+                <input id="numInput3" type="number" class="form-control" />
+              </div>
+              <button class="btn btn-primary" onclick="readNum()">
+               Đọc
+              </button>
+            </div>
+            <div id="showReadNum" class="card-footer text-muted"></div>
+          </div>
+        </div>
+        <!-- Bài tập 3 -->
+        <!-- Bài tập 4 -->
+        <div class="col-lg-10 mt-3">
+          <div class="card">
+            <div class="card-header">
+              Bài tập 4: Tìm sinh viên xa trường nhất
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Sinh viên 1:</label>
+                <div class="group d-flex">
+                  <input id="tenSV1" type="text" class="form-control mr-3" placeholder="Nhập tên"/>
+                  <input id="xSV1" type="number" class="form-control mr-3" placeholder="Nhập tọa độ x"/>
+                  <input id="ySV1" type="number" class="form-control" placeholder="Nhập tọa độ y"/>
+                </div>
+                <div class="form-group mt-3">
+                  <label>Sinh viên 2:</label>
+                  <div class="group d-flex">
+                    <input id="tenSV2" type="text" class="form-control mr-3" placeholder="Nhập tên"/>
+                    <input id="xSV2" type="number" class="form-control mr-3" placeholder="Nhập tọa độ x"/>
+                    <input id="ySV2" type="number" class="form-control" placeholder="Nhập tọa độ y"/>
+                  </div>
+                  <div class="form-group mt-3">
+                    <label>Sinh viên 3:</label>
+                    <div class="group d-flex">
+                      <input id="tenSV3" type="text" class="form-control mr-3" placeholder="Nhập tên"/>
+                      <input id="xSV3" type="number" class="form-control mr-3" placeholder="Nhập tọa độ x"/>
+                      <input id="ySV3" type="number" class="form-control" placeholder="Nhập tọa độ y"/>
+                    </div>
+                  <div class="form-group mt-3">
+                    <label>Trường học:</label>
+                    <div class="group d-flex">
+                      <input id="xTruong" type="number" class="form-control mr-3" placeholder="Nhập tọa độ x"/>
+                      <input id="yTruong" type="number" class="form-control" placeholder="Nhập tọa độ y"/>
+                    </div>
+              </div>
+              <button class="btn btn-primary" onclick="search()">
+               Tìm
+              </button>
+            </div>
+            <div id="showSearch" class="card-footer text-muted"></div>
+          </div>
+        </div>
+        <!-- Bài tập 4 -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="./Bai_Tap_1.js"></script>
+    <script src="./Bai_Tap_2.js"></script>
+    <script src="./Bai_Tap_3.js"></script>
+    <script src="./Bai_Tap_4.js"></script>
+    <!-- jQuery -->
+  </body>
+</html>
