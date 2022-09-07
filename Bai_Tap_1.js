@@ -43,14 +43,28 @@ function dateMonthYearNext() {
         newDateMonthYear = dateInput + 1 + "/" + monthInput + "/" + yearInput;
       } else if (dateInput == 28) {
         newDateMonthYear = "1" + "/" + (monthInput + 1) + "/" + yearInput;
+      } else {
+        newDateMonthYear = "Vui lòng nhập đúng thông tin!";
       }
+      break;
+    case 12:
+      if (dateInput > 0 && dateInput < 31) {
+        newDateMonthYear = dateInput + 1 + "/" + monthInput + "/" + yearInput;
+      } else if (dateInput == 31) {
+        newDateMonthYear = "1/1" + "/" + (yearInput + 1);
+      } else {
+        newDateMonthYear = "Vui lòng nhập đúng thông tin!";
+      }
+      break;
+    default:
+      newDateMonthYear = "Vui lòng nhập đúng thông tin!";
   }
 
   //đầu ra: xuất ra kết quả
 
   showDateMonthYear.innerHTML =
     "<p class='result mb-0'>" + newDateMonthYear + "</p>";
-}
+};
 
 // tính ngày tháng năm hôm qua
 function dateMonthYearPrev() {
@@ -80,7 +94,6 @@ function dateMonthYearPrev() {
     //trường hợp tháng có 30 ngày
     case 4:
     case 6:
-    case 8:
     case 9:
     case 11:
       if (dateInput > 1 && dateInput <= 30) {
@@ -121,8 +134,10 @@ function dateMonthYearPrev() {
         newDateMonthYear = "Vui lòng nhập đúng thông tin!";
       }
       break;
+    default:
+      newDateMonthYear = "Vui lòng nhập đúng thông tin!";
   }
   // đầu ra : xuất ra kết quả
   showDateMonthYear.innerHTML =
     "<p class='result mb-0'>" + newDateMonthYear + "</p>";
-}
+};
